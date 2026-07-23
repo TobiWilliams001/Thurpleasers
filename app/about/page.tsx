@@ -4,7 +4,6 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Heart, Users, ShieldCheck, Sparkles } from 'lucide-react'
 
 export default function AboutPage() {
   return (
@@ -178,38 +177,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="border-t border-border bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <h2 className="text-3xl font-bold text-center mb-16">What We Stand For</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { icon: Heart, title: 'Made With Love', desc: 'Every pack is crafted with care, quality, and heart.' },
-              { icon: Sparkles, title: 'Moments, Not Just Snacks', desc: 'We create moments worth sharing and memories worth keeping.' },
-              { icon: Users, title: 'Connection', desc: 'The best things in life are never enjoyed alone. They are shared.' },
-              { icon: ShieldCheck, title: 'Quality You Can Trust', desc: 'Made in a clean, hygienic environment with ethical practices.' },
-            ].map((value, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <value.icon size={22} className="text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="border-t border-border bg-white">
+      <section className="border-t border-border bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
-          <h2 className="text-3xl font-bold mb-4">Join Us on This Journey</h2>
+          <h2 className="text-3xl font-bold mb-4">Join the Thurspleasers Family</h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto text-balance">
-            Be part of the Thurspleasers community and experience the joy of quality snacking.
+            Be part of our story and share the moments that stay with you.
           </p>
           <Link href="/rewards">
-            <Button size="lg">Start Your Journey</Button>
+            <Button size="lg">Join the Family</Button>
           </Link>
         </div>
       </section>
