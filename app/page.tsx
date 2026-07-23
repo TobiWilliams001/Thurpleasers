@@ -25,39 +25,28 @@ export default function Home() {
 
       {/* Hero */}
       <section className="border-b border-border bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="inline-block mb-6 text-sm font-medium tracking-wide text-primary uppercase">
-                Premium coated peanuts
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
-                Taste the joy in every crunch
-              </h1>
-              <p className="text-lg text-muted-foreground mb-10 max-w-md text-balance">
-                Thurspleasers brings you authentic, carefully crafted peanut snacks
-                that celebrate the flavors of Nigeria and the joy of sharing.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/products">
-                  <Button size="lg" className="w-full sm:w-auto">
-                    Shop Now <ArrowRight className="ml-2" size={18} />
-                  </Button>
-                </Link>
-                <Link href="/rewards">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Join Rewards
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative aspect-square rounded-2xl border border-border bg-muted/40 flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <Sparkles size={56} className="mx-auto mb-3 text-primary/70" />
-                <p className="text-sm">Premium Peanuts</p>
-              </div>
-            </div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+          <span className="inline-block mb-6 text-sm font-medium tracking-wide text-primary uppercase">
+            Premium coated peanuts
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
+            Taste the joy in every crunch
+          </h1>
+          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto text-balance">
+            Thurspleasers brings you authentic, carefully crafted peanut snacks that
+            celebrate the flavors of Nigeria and the joy of sharing.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/products">
+              <Button size="lg" className="w-full sm:w-auto">
+                Shop Now <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </Link>
+            <Link href="/rewards">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                Join Rewards
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -95,34 +84,28 @@ export default function Home() {
       <section className="border-t border-border bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Signature Flavors</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Pack Sizes</h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Each flavor tells a story of passion and tradition.
+              One irresistible recipe, made for every moment.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {products.slice(0, 6).map((product) => (
               <div
                 key={product.id}
-                className="rounded-2xl border border-border bg-white overflow-hidden hover:border-primary/40 transition"
+                className="rounded-2xl border border-border bg-white p-6 hover:border-primary/40 transition"
               >
-                <div className="aspect-square bg-muted/40 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <Sparkles size={40} className="mx-auto mb-2 text-primary/60" />
-                    <p className="text-sm">{product.flavor}</p>
-                  </div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-semibold text-lg">{product.name}</h3>
+                  <span className="text-sm font-medium text-primary">{product.size}</span>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-5">{product.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold text-primary">{product.price}</span>
-                    <Button size="sm" variant="outline">
-                      Order
-                    </Button>
-                  </div>
-                </div>
+                <p className="text-sm text-muted-foreground mb-5">{product.description}</p>
+                <Link href="/products">
+                  <Button size="sm" variant="outline" className="w-full">
+                    Order
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>

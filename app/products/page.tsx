@@ -5,7 +5,7 @@ import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { products } from '@/lib/data'
 import Link from 'next/link'
-import { Sparkles, ShoppingCart, Heart } from 'lucide-react'
+import { ShoppingCart, Heart } from 'lucide-react'
 
 export default function ProductsPage() {
   return (
@@ -40,49 +40,32 @@ export default function ProductsPage() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-white border border-border rounded-2xl overflow-hidden hover:border-primary/40 transition group"
+                className="bg-white border border-border rounded-2xl p-6 hover:border-primary/40 transition"
               >
-                {/* Product Image */}
-                <div className="aspect-square bg-muted/40 flex items-center justify-center overflow-hidden">
-                  <div className="text-center text-muted-foreground group-hover:scale-105 transition">
-                    <Sparkles size={56} className="mx-auto mb-2 text-primary/60" />
-                    <p className="text-sm font-medium">{product.size}</p>
-                  </div>
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="font-bold text-lg">{product.name}</h3>
+                  <span className="text-sm font-medium text-primary whitespace-nowrap ml-2">
+                    {product.size}
+                  </span>
                 </div>
 
-                {/* Product Info */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="font-bold text-lg flex-1">{product.name}</h3>
-                    {product.available && (
-                      <span className="bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap ml-2">
-                        Available
-                      </span>
-                    )}
-                  </div>
+                <p className="text-sm text-muted-foreground mb-6">{product.description}</p>
 
-                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
-
-                  <div className="flex items-center gap-2 mb-4 text-sm">
-                    <span className="text-muted-foreground">Size:</span>
-                    <span className="font-semibold">{product.size}</span>
-                  </div>
-
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-bold text-primary">{product.price}</span>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <a href="https://wa.me/2348073938558?text=I want to order Thurspleasers" target="_blank" rel="noopener noreferrer" className="flex-1">
-                      <Button className="w-full bg-primary hover:opacity-90">
-                        <ShoppingCart size={18} className="mr-2" />
-                        Order
-                      </Button>
-                    </a>
-                    <Button variant="outline" size="icon" aria-label="Add to favorites">
-                      <Heart size={18} />
+                <div className="flex gap-2">
+                  <a
+                    href={`https://wa.me/2348073938558?text=I want to order the ${product.name} (${product.size})`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button className="w-full bg-primary hover:opacity-90">
+                      <ShoppingCart size={18} className="mr-2" />
+                      Order
                     </Button>
-                  </div>
+                  </a>
+                  <Button variant="outline" size="icon" aria-label="Add to favorites">
+                    <Heart size={18} />
+                  </Button>
                 </div>
               </div>
             ))}

@@ -72,16 +72,6 @@ export default function StoreLocatorPage() {
           <div className="lg:col-span-2">
             {selectedStore && (
               <div className="bg-card border border-border rounded-xl overflow-hidden">
-                {/* Map Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-muted to-secondary/30 flex items-center justify-center relative">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin size={64} className="mx-auto mb-4 opacity-50" />
-                    <p className="font-medium">
-                      {selectedStore.city}, {selectedStore.state}
-                    </p>
-                  </div>
-                </div>
-
                 {/* Store Info */}
                 <div className="p-8 space-y-6">
                   <div>
