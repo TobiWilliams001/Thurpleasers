@@ -220,18 +220,3 @@ export const communityPosts: CommunityPost[] = [
     category: 'story',
   },
 ]
-
-export type LoyaltyTier = 'Bronze' | 'Silver' | 'Gold' | 'Legacy'
-
-export const leaderboardUsers: { rank: number; name: string; points: number; tier: LoyaltyTier }[] = [
-  { rank: 1, name: 'Chioma E.', points: 8750, tier: 'Legacy' },
-  { rank: 2, name: 'Tunde O.', points: 7320, tier: 'Gold' as const },
-  { rank: 3, name: 'Amara A.', points: 6890, tier: 'Gold' as const },
-  { rank: 4, name: 'Ibrahim H.', points: 6145, tier: 'Gold' as const },
-  { rank: 5, name: 'Folake A.', points: 5230, tier: 'Legacy' as const },
-  { rank: 6, name: 'Kunle O.', points: 4875, tier: 'Gold' as const },
-  { rank: 7, name: 'Nkechi O.', points: 4320, tier: 'Gold' as const },
-  { rank: 8, name: 'David A.', points: 3890, tier: 'Gold' as const },
-  { rank: 9, name: 'Zainab A.', points: 3145, tier: 'Silver' as const },
-  { rank: 10, name: 'Ify N.', points: 2780, tier: 'Silver' as const },
-]
