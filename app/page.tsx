@@ -4,7 +4,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { ArrowRight, Leaf, Users, Gift, Sparkles, Star } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { testimonials, products } from '@/lib/data'
 
@@ -47,35 +47,6 @@ export default function Home() {
                 Join Rewards
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Thurspleasers</h2>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              A celebration of flavor, quality, and community.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { icon: Sparkles, title: 'Premium Quality', desc: 'Hand-selected peanuts, roasted to perfection.' },
-              { icon: Leaf, title: 'Natural Ingredients', desc: 'No artificial preservatives or excess salt.' },
-              { icon: Users, title: 'Community Driven', desc: 'Built on authentic connections and shared joy.' },
-              { icon: Gift, title: 'Loyalty Rewards', desc: 'Earn points with every purchase and referral.' },
-            ].map((feature, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <feature.icon size={22} className="text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
